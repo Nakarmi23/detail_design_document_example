@@ -10,7 +10,7 @@ The project aims to solve **XYZ problem**. _Briefly explain the problem and how 
 
 ### Purpose
 
-_Briefly explain the purpose of the document._
+The purpose of this Detailed Design Document is to provide a comprehensive overview of the architectural, design, implementation, testing, and documentation aspects of the **XYZ system**. It serves as a blueprint for the development team, guiding them through the process of building and deploying the system.
 
 ### Scope and objectives
 

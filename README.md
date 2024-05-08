@@ -40,7 +40,7 @@ The system utilizes a relational data model to organize and manage its data. The
 
 #### Entity Relation Diagram
 
-![Demo Entity Relation Diagram!](/assets/images/ERD.png)
+![Demo Entity Relation Diagram](/assets/images/ERD.png)
 
 The following entities are represented in the ERD:
 
@@ -153,15 +153,27 @@ The following tables are part of the relational data model:
    |contractDate|DateTime|
    |contractEndDate|DateTime|
    |paymentId| Foreign Key referncing Payment, INT|
-   |ContractBy| Foreign Key referncing Employee, INT|
+   |contractBy| Foreign Key referncing Employee, INT|
 
-## Architectural Overview
+The relational data model facilitates efficient storage, retrieval, and manipulation of data within the system. Relationships between entities are maintained through foreign key constraints, ensuring data integrity and consistency.
 
-### High-level system architecture
+## System Architecture
+
+### High-Level System Architecture
+The system architecture follows a monolithic architecture pattern, where all components of the application are containerized using Docker. The architecture consists of the following high-level components:
+
+1. **User Interface (UI) Layer**: Responsible for presenting the user interface and handling user interactions. It includes the frontend components of the application built using React.
+2. **Backend Application**: Contains the application logic, business rules, and data processing functionalities. It includes server-side code written in Node.js using Nest.js framework.
+3. **Data Storage Layer**: Manages the persistence and retrieval of data.
+   1. It includes a relational database system (e.g., MariaDB/PostgreSQL) for storing structured data.
+   2. And Redis as an in-memory data store for caching frequently accessed data. It improves performance by reducing database load and latency.
+4. **Proxy Layer**: Acts as a reverse proxy and load balancer, directing incoming requests to the appropriate services. It improves security, performance, and scalability by offloading SSL termination, caching, and request routing.
+
+![High-level System Architecture Diagram](assets/images/highLevelSystemArchitecture.png)
 
 ### Component interaction diagrams
 
-### Technology stack and framework used
+### Technology stack and Framework Used
 
 ## Detailed Component Design
 

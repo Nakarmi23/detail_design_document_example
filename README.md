@@ -168,12 +168,32 @@ The system architecture follows a monolithic architecture pattern, where all com
    1. It includes a relational database system (e.g., MariaDB/PostgreSQL) for storing structured data.
    2. And Redis as an in-memory data store for caching frequently accessed data. It improves performance by reducing database load and latency.
 4. **Proxy Layer**: Acts as a reverse proxy and load balancer, directing incoming requests to the appropriate services. It improves security, performance, and scalability by offloading SSL termination, caching, and request routing.
+   
+The folowing diagram illustrates the high-level system architecture:
 
 ![High-level System Architecture Diagram](assets/images/highLevelSystemArchitecture.png)
 
-### Component interaction diagrams
-
 ### Technology stack and Framework Used
+The system utilizes the following technologies and frameworks:
+1. User Interface (UI) Layer:
+   1. HTML, CSS, JavaScript for fornt-end development.
+   2. React.js for building interactive user interfaces.
+2. Backend Application:
+   1. Node.js with Nest.js for building the monolithic backend application.
+3. Data Storage Layer:
+   1. Mariadb/PostgreSQL for relational database management.
+   2. Redis for in-memory caching of frequently accessed data.
+4. Nginx Reverse Proxy:
+   1. Nginx as a reverse proxy and load balancer.
+   
+### Deployment Architecture
+The deployment architecture of the system involves using Docker containers for packaging and deploying each component of the application separately. The deployment architecture includes:
+1. **Docker Containers**: Each component of the monolithic application is packaged as a separate Docker container, including the frontend, backend, database, and Redis components.
+2. **Docker Compose**: Docker Compose is used to define and manage multi-container Docker applications. It allows for defining the services, networks, and volumes required for running the application.
+3. **Nginx Reverse Proxy**: Nginx is used as a reverse proxy server to route incoming requests to the appropriate backend and frontend servers. It handles load balancing, SSL termination, caching, and request routing.
+
+### Scalability Consideration
+The use of Docker containers allows for easy scaling of individual components by deploying multiple instances of each container. Nginx load balancing improves performance and scalability by distributing incoming traffic among multiple backend instances, ensuring optimal resource utilization and high availability. Redis cache improves performance and scalability by caching frequently accessed data, reducing database load and latency.
 
 ## Detailed Component Design
 

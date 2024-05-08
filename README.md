@@ -160,6 +160,7 @@ The relational data model facilitates efficient storage, retrieval, and manipula
 ## System Architecture
 
 ### High-Level System Architecture
+
 The system architecture follows a monolithic architecture pattern, where all components of the application are containerized using Docker. The architecture consists of the following high-level components:
 
 1. **User Interface (UI) Layer**: Responsible for presenting the user interface and handling user interactions. It includes the frontend components of the application built using React.
@@ -174,6 +175,7 @@ The folowing diagram illustrates the high-level system architecture:
 ![High-level System Architecture Diagram](assets/images/highLevelSystemArchitecture.png)
 
 ### Technology stack and Framework Used
+
 The system utilizes the following technologies and frameworks:
 1. User Interface (UI) Layer:
    1. HTML, CSS, JavaScript for fornt-end development.
@@ -187,17 +189,63 @@ The system utilizes the following technologies and frameworks:
    1. Nginx as a reverse proxy and load balancer.
    
 ### Deployment Architecture
+
 The deployment architecture of the system involves using Docker containers for packaging and deploying each component of the application separately. The deployment architecture includes:
 1. **Docker Containers**: Each component of the monolithic application is packaged as a separate Docker container, including the frontend, backend, database, and Redis components.
 2. **Docker Compose**: Docker Compose is used to define and manage multi-container Docker applications. It allows for defining the services, networks, and volumes required for running the application.
 3. **Nginx Reverse Proxy**: Nginx is used as a reverse proxy server to route incoming requests to the appropriate backend and frontend servers. It handles load balancing, SSL termination, caching, and request routing.
 
 ### Scalability Consideration
+
 The use of Docker containers allows for easy scaling of individual components by deploying multiple instances of each container. Nginx load balancing improves performance and scalability by distributing incoming traffic among multiple backend instances, ensuring optimal resource utilization and high availability. Redis cache improves performance and scalability by caching frequently accessed data, reducing database load and latency.
 
-## Detailed Component Design
-
 ## User Interface Design
+
+### Design Principles
+
+The User Interface (UI) design of the system is guided by the following principles:
+
+1. **Consistency**: Maintain consistency in layout, styling, and interaction patterns throughout the application to provide a seamless user experience.
+2. **Clarity**: Ensure clarity in the presentation of information, use of language, and labeling of UI elements to minimize user confusion.
+3. **Accessibility**: Design the UI to be accessible to users of all abilities, including those with disabilities, by adhering to WCAG guidelines and providing alternative text for images and other non-text elements.
+4. **Simplicity**: Keep the UI simple and intuitive, avoiding clutter and unnecessary complexity to facilitate ease of use.
+5. **Responsiveness**: Ensure that the UI is responsive and adaptable to different screen sizes and devices, providing a consistent experience across desktop, tablet, and mobile platforms.
+
+### Wireframes
+
+Wireframes have been created to visualize the layout and structure of key screens within the application. These wireframes serve as a blueprint for the UI design and provide a reference for developers during implementation.
+
+[Click here](https://www.figma.com/file/PsOKjeZCMApHsjgbnn9Dkp/Meeting?node-id=78-6742&mode=dev) to go to the wireframe.
+
+### Visual Design
+
+The visual design of the UI is characterized by:
+
+1. **Color Scheme**: A clean and modern color palette with subtle gradients and contrasting accents to guide user attention and enhance visual appeal.
+2. **Typography**: Utilization of readable and accessible fonts for both headings and body text, ensuring legibility across different screen sizes.
+3. **Iconography**: Consistent use of icons and visual cues to convey information and assist with navigation, enhancing user understanding and engagement.
+4. **Whitespace**: Strategic use of whitespace to create visual breathing room, improve readability, and draw attention to key UI elements.
+   
+### Interaction Design
+
+Interaction design focuses on how users interact with the application and includes considerations such as:
+
+1. **Navigation**: Clear and intuitive navigation paths to help users move between different sections of the application easily.
+2. **Feedback**: Instant feedback for user actions such as form submissions, button clicks, and error messages to provide reassurance and guidance.
+3. **Animations**: Subtle animations and transitions to enhance user experience and provide visual feedback during interactions.
+4. **Microinteractions**: Delightful microinteractions such as button hover effects, loading spinners, and tooltips to engage users and improve overall usability.
+
+### Prototype
+
+A clickable prototype has been developed to simulate the user flow and interactions within the application. Stakeholders and end-users can interact with the prototype to provide feedback and validate design decisions before development.
+
+[Click here](https://www.figma.com/file/PsOKjeZCMApHsjgbnn9Dkp/Meeting?node-id=78-6742&mode=dev) to go to the clickable prototype of the system.
+
+### Design Review
+
+The UI design has undergone multiple rounds of review and iteration based on feedback from stakeholders, usability testing, and best practices in UI/UX design. Continuous refinement and improvement are ongoing processes to ensure the UI meets user needs and expectations effectively.
+
+This section provides an overview of the User Interface (UI) Design considerations, including design principles, wireframes, visual design elements, interaction design, accessibility considerations, prototype development, and design review processes.
 
 ## Security Design
 

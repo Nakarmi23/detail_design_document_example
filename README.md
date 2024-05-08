@@ -90,33 +90,70 @@ The following tables are part of the relational data model:
    |Column Name|Properties|
    |---|---|
    | id | Primary Key, INT |
-   |name| VARCHAR(225)|
+   |name| VARCHAR(255)|
 
 1. **VehicleType**:
    |Column Name|Properties|
    |---|---|
    | id | Primary Key, INT |
-   |name| VARCHAR(225)|
+   |name| VARCHAR(255)|
 
 1. **Vehicle**:
+   |Column Name|Properties|
+   |---|---|
+   |id| Primary Key, INT|
+   |manufacturerId| Foreign Key referncing VehicleManufacturer, INT|
+   |licencePlateNumber|VARCHAR(255)|
+   |isAvailiable| BOOLEAN|
+   |typeId| Foreign Key referncing VehicleType, INT|
 
-1. **Employee**:
+2. **Employee**:
+   |Column Name|Properties|
+   |---|---|
+   | id | Primary Key, INT |
+   |firstName |VARCHAR(255)|
+   |lastName| VARCHAR(255)|
+   |email| VARCHAR(255)|
+   |contact| VARCHAR(255)|
+   |isActive| BOOLEAN|
+   |joinDate| Date|
 
-1. **PaymentSource**:
+3. **PaymentSource**:
    |Column Name|Properties|
    |---|---|
    | id | Primary Key, INT |
    |name| VARCHAR(225)|
 
-1. **PaymentStatus**:
+4. **PaymentStatus**:
    |Column Name|Properties|
    |---|---|
    | id | Primary Key, INT |
    |name| VARCHAR(225)|
 
-1. **Payment**:
+5. **Payment**:
+   |Column Name|Properties|
+   |---|---|
+   | id | Primary Key, INT |
+   |amount |MONEY|
+   |discount| DOUBLE|
+   |finalAmount| MONEY|
+   |transactionRef| VARCHAR(255)|
+   |sourceId| Foreign Key referncing PaymentSource, INT|
+   |transactionDate|DateTime|
+   |completionDate|DateTime|
+   |remark|LONGTEXT|
+   |statusId| Foreign Key referncing PaymentStatus, INT|
 
-1. **UserVehicleContract**:
+6. **UserVehicleContract**:
+   |Column Name|Properties|
+   |---|---|
+   | id | Primary Key, INT |
+   |userId| Foreign Key referncing User, INT|
+   |vehicleId| Foreign Key referncing Vehicle, INT|
+   |contractDate|DateTime|
+   |contractEndDate|DateTime|
+   |paymentId| Foreign Key referncing Payment, INT|
+   |ContractBy| Foreign Key referncing Employee, INT|
 
 ## Architectural Overview
 
